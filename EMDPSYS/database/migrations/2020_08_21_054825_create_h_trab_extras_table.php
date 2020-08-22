@@ -19,7 +19,7 @@ class CreateHTrabExtrasTable extends Migration
             $table->dateTime("dInicio");
             $table->dateTime("dFin");
             $table->integer("nIdEmpleado")->unsigned();
-            $table -> foreign("nIdEmpleado")->references("nIdEmpleado")->on("m_empleados");
+            $table->foreign("nIdEmpleado")->references("nIdEmpleado")->on("m_empleados");
             $table->timestamps();
         });
     }

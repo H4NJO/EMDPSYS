@@ -20,7 +20,7 @@ class CreateHBonificacionsTable extends Migration
             $table->boolean("bEstado");
             $table->string("cDescripcion",250);
             $table->integer("nIdEmpleado")->unsigned();
-            $table -> foreign("nIdEmpleado")->references("nIdEmpleado")->on("m_empleados");
+            $table->foreign("nIdEmpleado")->references("nIdEmpleado")->on("m_empleados");
             $table->timestamps();
         });
     }
