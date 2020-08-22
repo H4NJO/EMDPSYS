@@ -3,31 +3,31 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Use App\Categoria;
+Use App\TCategoria;
 
 Route::get('categorias', function() {
     // If the Content-Type and Accept headers are set to 'application/json',
     // this will return a JSON structure. This will be cleaned up later.
-    return Categoria::all();
+    return TCategoria::all();
 });
 
 Route::get('categorias/{id}', function($id) {
-    return Categoria::find($id);
+    return TCategoria::find($id);
 });
 
 Route::post('categorias', function(Request $request) {
-    return Categoria::create($request->all);
+    return TCategoria::create($request->all);
 });
 
 Route::put('categorias/{id}', function(Request $request, $id) {
-    $categoria = Categoria::findOrFail($id);
+    $categoria = TCategoria::findOrFail($id);
     $categoria->update($request->all());
 
     return $categoria;
 });
 
 Route::delete('categorias/{id}', function($id) {
-    Categoria::find($id)->delete();
+    TCategoria::find($id)->delete();
 
     return 204;
 });

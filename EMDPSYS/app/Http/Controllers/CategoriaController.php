@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-Use App\Categoria;
+Use App\TCategoria;
 use Illuminate\Http\Request;
 
 class CategoriaController extends Controller
@@ -10,29 +10,29 @@ class CategoriaController extends Controller
 
     public function index()
     {
-        return Categoria::all();
+        return TCategoria::all();
     }
 
-    public function show(Categoria $categoria)
+    public function show(TCategoria $categoria)
     {
         return $categoria;
     }
 
     public function store(Request $request)
     {
-        $categoria = Categoria::create($request->all());
+        $categoria = TCategoria::create($request->all());
 
         return response()->json($categoria, 201);
     }
 
-    public function update(Request $request, Categoria $categoria)
+    public function update(Request $request, TCategoria $categoria)
     {
         $categoria->update($request->all());
 
         return response()->json($categoria, 200);
     }
 
-    public function delete(Categoria $categoria)
+    public function delete(TCategoria $categoria)
     {
         $categoria->delete();
 
