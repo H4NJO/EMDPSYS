@@ -13,8 +13,19 @@ class CreateMDeliveriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('m_deliveries', function (Blueprint $table) {
-            $table->id();
+        Schema::create('m_deliveries', function (Blueprint $table)
+         {
+            $table -> increments('nIdDelivery');
+            $table -> datetime('dFechaDelivery', 0);
+            $table->string('cDireccion', 250);
+            $table->string('cReceptor', 250);
+            $table ->time('tHoraDelivery');
+            $table->string('cLinkMapa', 250);
+            $table->string('cTelefonoReceptor', 9);
+            $table -> datetime('dFechaAnulacion', 0);
+            $table -> boolean('bAnulado');
+            $table -> foreign('nldVenta')->references('nldVenta')->on('MVenta');
+            $table -> foreign('nldCourier')->references('nldCourier')->on('MCourier');
             $table->timestamps();
         });
     }

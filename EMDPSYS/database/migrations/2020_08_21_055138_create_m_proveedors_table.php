@@ -13,8 +13,19 @@ class CreateMProveedorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('m_proveedors', function (Blueprint $table) {
-            $table->id();
+        Schema::create('m_proveedors', function (Blueprint $table) 
+        {
+            $table -> increments('nIdProveedor');
+            $table -> int('cNumeroDocumento');
+            $table -> string("cNombreContacto", 250);
+            $table -> string("cApellidoPaterno", 250);
+            $table -> string("cApellidoMaterno", 250);
+            $table -> string("cNombreEmpresa", 250);
+            $table->string('cTelefono', 9);
+            $table->string('cCorreoElectronico', 250);
+            $table->string('cDireccion', 250);
+            $table -> boolean('bEstado');
+            $table -> foreign('nldDocumento')->references('nldDocumento')->on('TDocumento');
             $table->timestamps();
         });
     }

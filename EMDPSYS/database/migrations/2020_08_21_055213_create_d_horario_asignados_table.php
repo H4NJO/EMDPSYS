@@ -13,8 +13,13 @@ class CreateDHorarioAsignadosTable extends Migration
      */
     public function up()
     {
-        Schema::create('d_horario_asignados', function (Blueprint $table) {
-            $table->id();
+        Schema::create('d_horario_asignados', function (Blueprint $table)
+         {
+            
+            $table -> foreign('nldHorario')->references('nldHorario')->on('MHorario');
+            $table -> foreign('nldEmpleado')->references('nldEmpleado')->on('MEmpleado');
+            $table -> foreign('nldContrato')->references('nldContrato')->on('MContrato');
+            $table -> string('cObservaciones', 250);
             $table->timestamps();
         });
     }

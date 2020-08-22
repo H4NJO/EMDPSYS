@@ -13,8 +13,13 @@ class CreateHEntradaSalidasTable extends Migration
      */
     public function up()
     {
-        Schema::create('h_entrada_salidas', function (Blueprint $table) {
-            $table->id();
+        Schema::create('h_entrada_salidas', function (Blueprint $table)
+         {
+            $table -> increments('nldEntradaSalida');
+            $table -> datetime('dEntradaSalida');
+            $table -> foreign('nldEmpleado')->references('nldEmpleado')->on('MEmpleado');
+            $table -> foreign('nldEntSal')->references('nldEntSal')->on('TEntSal');
+            $table -> string('cObservaciones', 250);
             $table->timestamps();
         });
     }

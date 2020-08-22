@@ -13,8 +13,16 @@ class CreateHAusenciasTable extends Migration
      */
     public function up()
     {
-        Schema::create('h_ausencias', function (Blueprint $table) {
-            $table->id();
+        Schema::create('h_ausencias', function (Blueprint $table) 
+        {
+            $table -> increments('nIdAusencia');
+            $table -> datetime('dInicio', 0);
+            $table -> datetime('dFinal', 0);
+            $table -> int('nIdAdministrador');
+            $table -> foreign('nldEmpleado')->references('nldEmpleado')->on('MEmpleado');
+            $table -> string("cDescripcion", 250);
+            $table -> boolean('bEstado');
+            $table -> foreign('nldAusencia')->references('nldAusencia')->on('TAusencia');
             $table->timestamps();
         });
     }

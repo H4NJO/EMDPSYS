@@ -13,8 +13,17 @@ class CreateDIngresosTable extends Migration
      */
     public function up()
     {
-        Schema::create('d_ingresos', function (Blueprint $table) {
-            $table->id();
+        Schema::create('d_ingresos', function (Blueprint $table) 
+        {
+            $table -> foreign('nldIngreso')->references('nldIngreso')->on('MIngreso');
+            $table -> foreign('nldProducto')->references('nldProducto')->on('MProducto');
+            $table -> decimal('nPrecioUnitario');
+            $table -> decimal('nCostoUnitario');
+            $table -> decimal('nGanancia');
+            $table -> int('nCantidad');
+            $table -> int('nTotal');
+            $table -> string('cLote');
+            $table -> datetime("dFechaVencimientoLote", 0);
             $table->timestamps();
         });
     }

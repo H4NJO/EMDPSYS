@@ -13,8 +13,20 @@ class CreateMVentasTable extends Migration
      */
     public function up()
     {
-        Schema::create('m_ventas', function (Blueprint $table) {
-            $table->id();
+        Schema::create('m_ventas', function (Blueprint $table) 
+        {
+            $table -> increments('nIdVenta');
+            $table -> datetime('dFechaVenta', 0);
+            $table -> boolean('bAnulado');
+            $table -> datetime('dFechaAnulacion', 0);
+            $table -> decimal('nTotalVenta');
+            $table -> decimal('nTotalImpuesto');
+            $table -> decimal('nMontoIGV');
+            $table -> decimal('nGravadas');
+            $table -> foreign('nldCliente')->references('nldCliente')->on('MCliente');
+            $table -> foreign('nldEmpleado')->references('nldEmpleado')->on('MEmpleado');
+            $table -> foreign('nldSucursal')->references('nldSucursal')->on('MSucursal');
+            $table -> foreign('nldMoneda')->references('nldMoneda')->on('TMoneda');
             $table->timestamps();
         });
     }

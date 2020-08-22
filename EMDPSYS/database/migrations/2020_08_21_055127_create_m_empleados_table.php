@@ -13,8 +13,20 @@ class CreateMEmpleadosTable extends Migration
      */
     public function up()
     {
-        Schema::create('m_empleados', function (Blueprint $table) {
-            $table->id();
+        Schema::create('m_empleados', function (Blueprint $table)
+         {
+            $table -> increments('nIdEmpleado');
+            $table -> int('cNumeroDocumento');
+            $table -> string("cNombre", 250);
+            $table -> string("cApellidoPaterno", 250);
+            $table -> string("cApellidoMaterno", 250);
+            $table -> datetime("dFechaNacimiento", 0);
+            $table->string('cTelefono', 9);
+            $table->string('cCorreoElectronico', 250);
+            $table->string('cDireccionDomicilio', 250);
+            $table->string('cPassword', 250);
+            $table -> boolean('bEstado');
+            $table -> foreign('nldDocumento')->references('nldDocumento')->on('TDocumento');
             $table->timestamps();
         });
     }
