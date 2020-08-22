@@ -14,7 +14,13 @@ class CreateMIngresosTable extends Migration
     public function up()
     {
         Schema::create('m_ingresos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('nIdIngreso');
+            $table->datetime('dFechaIngreso');
+            $table->int('nTotal');
+            $table->int('nIGV');
+            $table->foreign('nIdSucursal')->references('nIdSucursal')->on('MSucursal');
+            $table->foreign('nIdProveedor')->references('nIdProveedor')->on('MProveedor');
+            $table->foreign('nIdEmpleado')->references('nIdEmpleado')->on('MEmpleado');
             $table->timestamps();
         });
     }

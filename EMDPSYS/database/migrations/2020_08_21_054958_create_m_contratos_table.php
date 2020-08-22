@@ -14,7 +14,12 @@ class CreateMContratosTable extends Migration
     public function up()
     {
         Schema::create('m_contratos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('nIdContrato');
+            $table->foreign('nIdEmpleado')->references('nIdEmpleado')->on('MEmpleado');
+            $table->foreign('nIdCargo')->references('nIdCargo')->on('TCargo');
+            $table->datetime('dInicioContrato');
+            $table->datetime('dFinContrato');
+            $table->decimal('nSueldo');
             $table->timestamps();
         });
     }

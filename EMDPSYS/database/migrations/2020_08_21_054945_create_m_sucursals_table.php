@@ -14,7 +14,14 @@ class CreateMSucursalsTable extends Migration
     public function up()
     {
         Schema::create('m_sucursals', function (Blueprint $table) {
-            $table->id();
+            $table->increments('nIdSucursal');
+            $table->string('cNombreSucursal',20);
+            $table->string('cTelefono',20);
+            $table->string('cSerieBoleta',20);
+            $table->string('cRUC',20);
+            $table->string('cRazonSocial',20);
+            $table->string('cDireccion',20);
+            $table->boolean('bEstado');
             $table->timestamps();
         });
     }

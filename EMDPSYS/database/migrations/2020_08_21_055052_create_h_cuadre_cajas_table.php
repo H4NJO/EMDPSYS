@@ -14,7 +14,12 @@ class CreateHCuadreCajasTable extends Migration
     public function up()
     {
         Schema::create('h_cuadre_cajas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('nIdCuadre');
+            $table->int('nMontoApertura');
+            $table->int('nMontoCierre');
+            $table->datetime('CuadreCaje');
+            $table->foreign('nldEmpleado')->references('nldEmpleado')->on('MEmpleado');
+            $table->foreign('nldSucursal')->references('nldSucursal')->on('MSucursal');
             $table->timestamps();
         });
     }
