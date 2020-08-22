@@ -23,10 +23,14 @@ class CreateMVentasTable extends Migration
             $table -> decimal('nTotalImpuesto');
             $table -> decimal('nMontoIGV');
             $table -> decimal('nGravadas');
-            $table -> foreign('nldCliente')->references('nldCliente')->on('MCliente');
-            $table -> foreign('nldEmpleado')->references('nldEmpleado')->on('MEmpleado');
-            $table -> foreign('nldSucursal')->references('nldSucursal')->on('MSucursal');
-            $table -> foreign('nldMoneda')->references('nldMoneda')->on('TMoneda');
+            $table -> integer('nldCliente')->unsigned();
+            $table -> foreign('nldCliente')->references('nldCliente')->on('m_clientes');
+            $table -> integer('nldEmpleado')->unsigned();
+            $table -> foreign('nldEmpleado')->references('nldEmpleado')->on('m_empleados');
+            $table -> integer('nldSucursal')->unsigned();
+            $table -> foreign('nldSucursal')->references('nldSucursal')->on('m_sucursal');
+            $table -> integer('nldMoneda')->unsigned();
+            $table -> foreign('nldMoneda')->references('nldMoneda')->on('t_monedas');
             $table->timestamps();
         });
     }
