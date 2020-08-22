@@ -14,7 +14,13 @@ class CreateHBonificacionsTable extends Migration
     public function up()
     {
         Schema::create('h_bonificacions', function (Blueprint $table) {
-            $table->id();
+            $table->increments("nIdBonificacion");
+            $table->dateTime("dFechaBonificacion");
+            $table->decimal("nMonto");
+            $table->boolean("bEstado");
+            $table->string("cDescripcion",250);
+            $table->integer("nIdEmpleado")->unsigned();
+            $table -> foreign("nIdEmpleado")->references("nIdEmpleado")->on("m_empleados");
             $table->timestamps();
         });
     }

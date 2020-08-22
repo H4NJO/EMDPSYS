@@ -14,7 +14,12 @@ class CreateHTrabExtrasTable extends Migration
     public function up()
     {
         Schema::create('h_trab_extras', function (Blueprint $table) {
-            $table->id();
+            $table->increments("nIdTrabExtra");
+            $table->string("cDescripcion",250);
+            $table->dateTime("dInicio");
+            $table->dateTime("dFin");
+            $table->integer("nIdEmpleado")->unsigned();
+            $table -> foreign("nIdEmpleado")->references("nIdEmpleado")->on("m_empleados");
             $table->timestamps();
         });
     }
