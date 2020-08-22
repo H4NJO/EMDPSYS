@@ -17,7 +17,7 @@ class CreateTMetodoPagosTable extends Migration
             $table-> increments('nIdMetPago');
             $table-> string('cNombre');
             $table-> decimal('nComision');
-            $table-> bool('bEstado');
+            $table-> boolean('bEstado');
             $table->timestamps();
         });
     }

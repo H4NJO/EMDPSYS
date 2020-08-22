@@ -17,7 +17,7 @@ class CreateTComprobanteVentasTable extends Migration
             $table-> increments('nIdCompVenta');
             $table-> string('cNombreCompVenta');
             $table-> string('cCodigoSunat');
-            $table-> bool('bEstado');
+            $table-> boolean('bEstado');
             $table->timestamps();
         });
     }

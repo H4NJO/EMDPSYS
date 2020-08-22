@@ -16,7 +16,7 @@ class CreateTDocumentosTable extends Migration
         Schema::create('t_documentos', function (Blueprint $table) {
             $table-> increments('nIdDocumento');
             $table-> string('cCantidadCaracteres');
-            $table-> bool('bEstado');
+            $table-> boolean('bEstado');
             $table->timestamps();
         });
     }

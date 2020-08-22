@@ -16,7 +16,7 @@ class CreateTComprobanteIngresosTable extends Migration
         Schema::create('t_comprobante_ingresos', function (Blueprint $table) {
             $table-> increments('nIdCompIngreso');
             $table-> string('cNombreCompIngreso');
-            $table-> bool('bEstado');
+            $table-> boolean('bEstado');
             $table->timestamps();
         });
     }

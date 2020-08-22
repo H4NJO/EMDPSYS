@@ -14,9 +14,9 @@ class CreateHEstadosDeliveriesTable extends Migration
     public function up()
     {
         Schema::create('h_estados_deliveries', function (Blueprint $table) {
-            $table->integer("nIdEstDelivery")->unsigned();
+            $table-> integer("nIdEstDelivery")->unsigned();
             $table -> foreign("nIdEstDelivery")->references("nIdEstDelivery")->on("t_estados_deliveries");
-            $table->integer("nIdDelivery")->unsigned();
+            $table-> integer("nIdDelivery")->unsigned();
             $table -> foreign("nIdDelivery")->references("nIdDelivery")->on("m_deliveries");
             $table->dateTime("dCambioEstado");
             $table->timestamps();

@@ -23,7 +23,8 @@ class CreateMClientesTable extends Migration
             $table->String('cCorreoElectronico',20);
             $table->String('cDireccion',20);
             $table->Boolean('bEstado');
-            $table->foreign('nIdDocumento')->references('nIdDocumento')->on('TDocumento');
+            $table-> integer('nIdDocumento')->unsigned();
+            $table -> foreign('nIdDocumento')->references('nIdDocumento')->on('t_documentos');
             $table->timestamps();
         });
     }

@@ -16,7 +16,7 @@ class CreateTCategoriasTable extends Migration
         Schema::create('t_categorias', function (Blueprint $table) {
             $table-> increments('nIdCategoria');
             $table-> string('cNombreCategoria');
-            $table-> bool('bEstado');
+            $table-> boolean('bEstado');
             $table->timestamps();
         });
     }

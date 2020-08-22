@@ -16,7 +16,7 @@ class CreateMEmpleadosTable extends Migration
         Schema::create('m_empleados', function (Blueprint $table)
          {
             $table -> increments('nIdEmpleado');
-            $table -> int('cNumeroDocumento');
+            $table -> integer('cNumeroDocumento');
             $table -> string("cNombre", 250);
             $table -> string("cApellidoPaterno", 250);
             $table -> string("cApellidoMaterno", 250);
@@ -26,7 +26,8 @@ class CreateMEmpleadosTable extends Migration
             $table->string('cDireccionDomicilio', 250);
             $table->string('cPassword', 250);
             $table -> boolean('bEstado');
-            $table -> foreign('nldDocumento')->references('nldDocumento')->on('TDocumento');
+            $table-> integer('nIdDocumento')->unsigned();
+            $table -> foreign('nIdDocumento')->references('nIdDocumento')->on('t_documentos');
             $table->timestamps();
         });
     }

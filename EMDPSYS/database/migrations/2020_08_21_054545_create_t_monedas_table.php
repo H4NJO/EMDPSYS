@@ -17,7 +17,7 @@ class CreateTMonedasTable extends Migration
             $table-> increments('nIdMoneda');
             $table-> string('cNombre');
             $table-> string('cSimbolo');
-            $table-> bool('bEstado');
+            $table-> boolean('bEstado');
             $table->timestamps();
         });
     }
