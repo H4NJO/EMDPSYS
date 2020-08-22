@@ -14,7 +14,13 @@ class CreateHPenalidadsTable extends Migration
     public function up()
     {
         Schema::create('h_penalidads', function (Blueprint $table) {
-            $table->id();
+            $table->increments("nIdPenalidad");
+            $table->dateTime("dFechaPenalidad");
+            $table->decimal("nMonto");
+            $table->boolean("bEstado");
+            $table->string("cDescripcion",250);
+            $table->integer("nIdEmpleado")->unsigned();
+            $table -> foreign("nIdEmpleado")->references("nIdEmpleado")->on("m_empleados");
             $table->timestamps();
         });
     }

@@ -14,7 +14,9 @@ class CreateTMarcasTable extends Migration
     public function up()
     {
         Schema::create('t_marcas', function (Blueprint $table) {
-            $table->id();
+            $table->increments("nIdMarca");
+            $table->string("cNombreMarca",250);
+            $table->boolean("bEstado");
             $table->timestamps();
         });
     }

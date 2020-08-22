@@ -14,7 +14,10 @@ class CreateTUnidadsTable extends Migration
     public function up()
     {
         Schema::create('t_unidads', function (Blueprint $table) {
-            $table->id();
+            $table->increments("nIdUnidad");
+            $table->string("cNombreUnidad",250);
+            $table->string("cUnidadSunat",250);
+            $table->boolean("bEstado");
             $table->timestamps();
         });
     }

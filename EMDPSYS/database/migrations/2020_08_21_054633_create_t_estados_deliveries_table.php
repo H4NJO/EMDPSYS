@@ -14,7 +14,9 @@ class CreateTEstadosDeliveriesTable extends Migration
     public function up()
     {
         Schema::create('t_estados_deliveries', function (Blueprint $table) {
-            $table->id();
+            $table->increments("nIdEstDelivery");
+            $table->string("cNombre",250);
+            $table->boolean("bEstado");
             $table->timestamps();
         });
     }

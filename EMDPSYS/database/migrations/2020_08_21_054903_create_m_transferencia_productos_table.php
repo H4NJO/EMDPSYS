@@ -14,7 +14,12 @@ class CreateMTransferenciaProductosTable extends Migration
     public function up()
     {
         Schema::create('m_transferencia_productos', function (Blueprint $table) {
-            $table->id();
+            $table->increments("nIdTransferencia");
+            $table->integer("nIdSucursalDestino")->unsigned();
+            $table->foreign("nIdSucursalDestino")->references("nIdSucursalDestino")->on("m_sucursals");
+            $table->string("cCorrelativo",250);
+            $table->integer("nIdSucursal")->unsigned();
+            $table->foreign("nIdSucursal")->references("nIdSucursal")->on("m_sucursals");
             $table->timestamps();
         });
     }
