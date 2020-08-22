@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMProveedorsTable extends Migration
+class CreateMCourriersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,17 @@ class CreateMProveedorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('m_proveedors', function (Blueprint $table) 
+        Schema::create('m_courriers', function (Blueprint $table) 
         {
-            $table -> increments('nIdProveedor');
-            $table -> int('cNumeroDocumento');
-            $table -> string("cNombreContacto", 250);
-            $table -> string("cApellidoPaterno", 250);
-            $table -> string("cApellidoMaterno", 250);
-            $table -> string("cNombreEmpresa", 250);
+            $table -> increments('nIdCourier');
+            $table -> integer('cNumeroDocumento');
+            $table -> string("cNombre", 250);
             $table->string('cTelefono', 9);
             $table->string('cCorreoElectronico', 250);
             $table->string('cDireccion', 250);
             $table -> boolean('bEstado');
-            $table -> foreign('nldDocumento')->references('nldDocumento')->on('TDocumento');
+            $table-> integer('nIdDocumento')->unsigned();
+            $table -> foreign('nIdDocumento')->references('nIdDocumento')->on('t_documentos');
             $table->timestamps();
         });
     }
@@ -37,6 +35,6 @@ class CreateMProveedorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('m_proveedors');
+        Schema::dropIfExists('m_courriers');
     }
 }

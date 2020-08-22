@@ -23,14 +23,14 @@ class CreateMVentasTable extends Migration
             $table -> decimal('nTotalImpuesto');
             $table -> decimal('nMontoIGV');
             $table -> decimal('nGravadas');
-            $table -> integer('nldCliente')->unsigned();
-            $table -> foreign('nldCliente')->references('nldCliente')->on('m_clientes');
-            $table -> integer('nldEmpleado')->unsigned();
-            $table -> foreign('nldEmpleado')->references('nldEmpleado')->on('m_empleados');
-            $table -> integer('nldSucursal')->unsigned();
-            $table -> foreign('nldSucursal')->references('nldSucursal')->on('m_sucursal');
-            $table -> integer('nldMoneda')->unsigned();
-            $table -> foreign('nldMoneda')->references('nldMoneda')->on('t_monedas');
+            $table -> integer('nIdCliente')->unsigned();
+            $table -> foreign('nIdCliente')->references('nIdCliente')->on('m_clientes');
+            $table -> integer('nIdEmpleado')->unsigned();
+            $table -> foreign('nIdEmpleado')->references('nIdEmpleado')->on('m_empleados');
+            $table -> integer('nIdSucursal')->unsigned();
+            $table -> foreign('nIdSucursal')->references('nIdSucursal')->on('m_sucursals');
+            $table -> integer('nIdMoneda')->unsigned();
+            $table -> foreign('nIdMoneda')->references('nIdMoneda')->on('t_monedas');
             $table->timestamps();
         });
     }

@@ -17,9 +17,11 @@ class CreateHEgresosTable extends Migration
             $table->increments('nIdEgreso');
             $table->String('cDescripcion',20);
             $table->datetime('dEgreso');
-            $table->int('nMonto');
-            $table->foreign('nIdEmpleado')->references('nIdEmpleado')->on('MEmpleado');
-            $table->foreign('nIdSucursal')->references('nIdSucursal')->on('MSucursal');
+            $table->decimal('nMonto');
+            $table->integer("nIdEmpleado")->unsigned();
+            $table->foreign('nIdEmpleado')->references('nIdEmpleado')->on('m_empleados');
+            $table->integer("nIdSucursal")->unsigned();
+            $table->foreign('nIdSucursal')->references('nIdSucursal')->on('m_sucursals');
             $table->timestamps();
         });
     }

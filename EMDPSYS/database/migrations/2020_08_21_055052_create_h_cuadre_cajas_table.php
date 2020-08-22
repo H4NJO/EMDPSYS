@@ -15,11 +15,13 @@ class CreateHCuadreCajasTable extends Migration
     {
         Schema::create('h_cuadre_cajas', function (Blueprint $table) {
             $table->increments('nIdCuadre');
-            $table->int('nMontoApertura');
-            $table->int('nMontoCierre');
+            $table->decimal('nMontoApertura');
+            $table->decimal('nMontoCierre');
             $table->datetime('CuadreCaje');
-            $table->foreign('nldEmpleado')->references('nldEmpleado')->on('MEmpleado');
-            $table->foreign('nldSucursal')->references('nldSucursal')->on('MSucursal');
+            $table->integer("nIdEmpleado")->unsigned();
+            $table->foreign('nIdEmpleado')->references('nIdEmpleado')->on('m_empleados');
+            $table->integer("nIdSucursal")->unsigned();
+            $table->foreign('nIdSucursal')->references('nIdSucursal')->on('m_sucursals');
             $table->timestamps();
         });
     }

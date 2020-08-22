@@ -16,11 +16,14 @@ class CreateMIngresosTable extends Migration
         Schema::create('m_ingresos', function (Blueprint $table) {
             $table->increments('nIdIngreso');
             $table->datetime('dFechaIngreso');
-            $table->int('nTotal');
-            $table->int('nIGV');
-            $table->foreign('nIdSucursal')->references('nIdSucursal')->on('MSucursal');
-            $table->foreign('nIdProveedor')->references('nIdProveedor')->on('MProveedor');
-            $table->foreign('nIdEmpleado')->references('nIdEmpleado')->on('MEmpleado');
+            $table->decimal('nTotal');
+            $table->decimal('nIGV');
+            $table->integer("nIdSucursal")->unsigned();
+            $table->foreign('nIdSucursal')->references('nIdSucursal')->on('m_sucursals');
+            $table->integer("nIdProveedor")->unsigned();
+            $table->foreign('nIdProveedor')->references('nIdProveedor')->on('m_proveedors');
+            $table->integer("nIdEmpleado")->unsigned();
+            $table->foreign('nIdEmpleado')->references('nIdEmpleado')->on('m_empleados');
             $table->timestamps();
         });
     }

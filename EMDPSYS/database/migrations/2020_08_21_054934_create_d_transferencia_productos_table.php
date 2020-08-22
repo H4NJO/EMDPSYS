@@ -15,8 +15,10 @@ class CreateDTransferenciaProductosTable extends Migration
     {
         Schema::create('d_transferencia_productos', function (Blueprint $table) {
 
-            $table->foreign('nIdTransferencial')->references('nIdTransferencia')->on('MTransferenciaProducto');
-            $table->foreign('nIdProducto')->references('nIdProducto')->on('MProducto');
+            $table-> integer('nIdTransferencia')->unsigned();            
+            $table->foreign('nIdTransferencia')->references('nIdTransferencia')->on('m_transferencia_productos');
+            $table-> integer('nIdProducto')->unsigned();            
+            $table->foreign('nIdProducto')->references('nIdProducto')->on('m_productos');
             $table->string('nCantidad',20);
             $table->string('cLote',20);
             $table->datetime('dFechaVencimientoLote');

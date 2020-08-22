@@ -15,7 +15,7 @@ class CreateDDevolucionsTable extends Migration
     {
         Schema::create('d_devolucions', function (Blueprint $table) {
             $table -> datetime('dFechaDevolucion');
-            $table -> decimal('nTotal',2,8);
+            $table -> decimal('nTotal',8,2);
             $table -> integer('nIdIngreso')->unsigned();
             $table -> foreign('nIdIngreso')->references('nIdIngreso')
             ->on('m_ingresos');

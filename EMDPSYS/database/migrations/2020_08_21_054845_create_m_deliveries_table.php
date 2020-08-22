@@ -24,8 +24,10 @@ class CreateMDeliveriesTable extends Migration
             $table->string('cTelefonoReceptor', 9);
             $table -> datetime('dFechaAnulacion', 0);
             $table -> boolean('bAnulado');
-            $table -> foreign('nldVenta')->references('nldVenta')->on('MVenta');
-            $table -> foreign('nldCourier')->references('nldCourier')->on('MCourier');
+            $table-> integer('nIdVenta')->unsigned();            
+            $table -> foreign('nIdVenta')->references('nIdVenta')->on('m_ventas');
+            $table-> integer('nIdCourier')->unsigned();
+            $table -> foreign('nIdCourier')->references('nIdCourier')->on('m_courriers');
             $table->timestamps();
         });
     }

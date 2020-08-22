@@ -19,8 +19,8 @@ class CreateMProformasTable extends Migration
             $table -> string('cCorrelativo', 20);
             $table -> decimal('nTotal',8,2);
             $table -> decimal('nIGV',8,2);
-            $table -> integer('nIdModena')->unsigned();
-            $table -> foreign('nIdModena')->references('nIdModena')
+            $table -> integer('nIdMoneda')->unsigned();
+            $table -> foreign('nIdMoneda')->references('nIdMoneda')
             ->on('t_monedas');
             $table -> integer('nIdEmpleado')->unsigned();
             $table -> foreign('nIdEmpleado')->references('nIdEmpleado')

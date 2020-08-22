@@ -20,7 +20,7 @@ class CreateMProductoMSucursalsTable extends Migration
             $table -> integer('nIdSucursal')->unsigned();
             $table -> foreign('nIdSucursal')->references('nIdSucursal')
             ->on('m_sucursals');
-            $table -> int('nStock');
+            $table -> integer('nStock');
             $table -> timestamps();
         });
     }

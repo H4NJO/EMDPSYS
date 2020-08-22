@@ -20,7 +20,7 @@ class CreateTMetPagoMVentasTable extends Migration
             $table -> integer('nIdVenta')->unsigned();
             $table -> foreign('nIdVenta')->references('nIdVenta')
             ->on('m_ventas');
-            $table -> int('nCantidad');
+            $table -> integer('nCantidad');
             $table -> timestamps();
         });
     }

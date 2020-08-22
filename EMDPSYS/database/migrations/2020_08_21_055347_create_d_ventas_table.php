@@ -15,7 +15,7 @@ class CreateDVentasTable extends Migration
     {
         Schema::create('d_ventas', function (Blueprint $table) {
             $table -> increments('nIdDVenta');
-            $table -> int('nCantidad');
+            $table -> integer('nCantidad');
             $table -> decimal('nPrecioUnitario',8,2);
             $table -> decimal('nTotal',8,2);
             $table -> integer('nIdVenta')->unsigned();
@@ -23,7 +23,7 @@ class CreateDVentasTable extends Migration
             ->on('m_ventas');
             $table -> integer('nIdProducto')->unsigned();
             $table -> foreign('nIdProducto')->references('nIdProducto')
-            ->on('MProducto');
+            ->on('m_productos');
             $table -> timestamps();
         });
     }

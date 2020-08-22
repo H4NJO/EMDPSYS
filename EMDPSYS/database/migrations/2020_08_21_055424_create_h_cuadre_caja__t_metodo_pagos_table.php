@@ -20,9 +20,9 @@ class CreateHCuadreCajaTMetodoPagosTable extends Migration
             $table -> integer('nIdCuadre')->unsigned();
             $table -> foreign('nIdCuadre')->references('nIdCuadre')
             ->on('h_cuadre_cajas');
-            $table -> decimal('nSubTotal',2,8);
-            $table -> decimal('nComision',2,8);
-            $table -> decimal('nTotal',2,8);
+            $table -> decimal('nSubTotal',8,2);
+            $table -> decimal('nComision',8,2);
+            $table -> decimal('nTotal',8,2);
             $table -> timestamps();
         });
     }

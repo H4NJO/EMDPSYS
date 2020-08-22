@@ -14,8 +14,8 @@ class CreateTCompIngresoMIngresosTable extends Migration
     public function up()
     {
         Schema::create('t_comp_ingreso__m_ingresos', function (Blueprint $table) {
-            $table -> integer('nIdComIngreso')->unsigned();
-            $table -> foreign('nIdComIngreso')->references('nIdComIngreso')
+            $table -> integer('nIdCompIngreso')->unsigned();
+            $table -> foreign('nIdCompIngreso')->references('nIdCompIngreso')
             ->on('t_comprobante_ingresos');
             $table -> integer('nIdIngreso')->unsigned();
             $table -> foreign('nIdIngreso')->references('nIdIngreso')

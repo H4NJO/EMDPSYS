@@ -15,15 +15,15 @@ class CreateDIngresosTable extends Migration
     {
         Schema::create('d_ingresos', function (Blueprint $table) 
         {
-            $table -> foreign('nldIngreso')->references('nldIngreso')->on('MIngreso');
-            $table -> foreign('nldProducto')->references('nldProducto')->on('MProducto');
+            $table -> integer('nIdIngreso')->unsigned();
+            $table -> foreign('nIdIngreso')->references('nIdIngreso')->on('m_ingresos');
+            $table -> integer('nIdProducto')->unsigned();
+            $table -> foreign('nIdProducto')->references('nIdProducto')->on('m_productos');
             $table -> decimal('nPrecioUnitario');
             $table -> decimal('nCostoUnitario');
             $table -> decimal('nGanancia');
-            $table -> int('nCantidad');
-            $table -> int('nTotal');
-            $table -> string('cLote');
-            $table -> datetime("dFechaVencimientoLote", 0);
+            $table -> integer('nCantidad');
+            $table -> integer('nTotal');
             $table->timestamps();
         });
     }

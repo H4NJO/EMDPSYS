@@ -15,7 +15,7 @@ class CreateDProformasTable extends Migration
     {
         Schema::create('d_proformas', function (Blueprint $table) {
             $table -> increments('nIdDetProforma');
-            $table -> int('nCantidad');
+            $table -> integer('nCantidad');
             $table -> decimal('nPrecioUnitario',8,2);
             $table -> decimal('nTotal',8,2);
             $table -> integer('nIdProforma')->unsigned();

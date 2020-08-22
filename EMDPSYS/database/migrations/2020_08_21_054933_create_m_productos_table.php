@@ -17,16 +17,20 @@ class CreateMProductosTable extends Migration
             $table->increments('nIdProducto');
             $table->String('cCodigo',20);
             $table->String('cNombreProducto',20);
-            $table->int('nPrecioUnitario');
-            $table->int('nCostoUnitario');
-            $table->int('nGanancia');
+            $table->decimal('nPrecioUnitario');
+            $table->decimal('nCostoUnitario');
+            $table->decimal('nGanancia');
             $table->datetime('dUltimaVenta');
             $table->datetime('dUltimaCompra');
             $table->boolean('bEstado');
-            $table->foreign('nIdCategoria')->references('nIdCategoria')->on('TCategoria');
-            $table->foreign('nIdSubcategoria')->references('nIdSubcategoria')->on('TSubcategoria');
-            $table->foreign('nIdMarca')->references('nIdMarca')->on('TMarca');
-            $table->foreign('nIdUnidad')->references('nIdUnidad')->on('TUnidad');
+            $table->integer("nIdCategoria")->unsigned();
+            $table->foreign('nIdCategoria')->references('nIdCategoria')->on('t_categorias');
+            $table->integer("nIdSubcategoria")->unsigned();
+            $table->foreign('nIdSubcategoria')->references('nIdSubcategoria')->on('t_subcategorias');
+            $table->integer("nIdMarca")->unsigned();
+            $table->foreign('nIdMarca')->references('nIdMarca')->on('t_marcas');
+            $table->integer("nIdUnidad")->unsigned();
+            $table->foreign('nIdUnidad')->references('nIdUnidad')->on('t_unidads');
             $table->timestamps();
         });
     }

@@ -20,7 +20,7 @@ class CreateDDeliveriesTable extends Migration
             $table -> integer('nIdProducto')->unsigned();
             $table -> foreign('nIdProducto')->references('nIdProducto')
             ->on('m_productos');
-            $table -> int('nCantidad');
+            $table -> integer('nCantidad');
             $table -> timestamps(); 
         });
     }

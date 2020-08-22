@@ -17,8 +17,10 @@ class CreateHEntradaSalidasTable extends Migration
          {
             $table -> increments('nldEntradaSalida');
             $table -> datetime('dEntradaSalida');
-            $table -> foreign('nldEmpleado')->references('nldEmpleado')->on('MEmpleado');
-            $table -> foreign('nldEntSal')->references('nldEntSal')->on('TEntSal');
+            $table -> integer('nIdEmpleado')->unsigned();
+            $table -> foreign('nIdEmpleado')->references('nIdEmpleado')->on('m_empleados');
+            $table -> integer('nIdEntSal')->unsigned();
+            $table -> foreign('nIdEntSal')->references('nIdEntSal')->on('t_ent_sals');
             $table -> string('cObservaciones', 250);
             $table->timestamps();
         });
