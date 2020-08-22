@@ -5,28 +5,28 @@ use Illuminate\Support\Facades\Route;
 
 Use App\TCategoria;
 
-Route::get('categorias', function() {
+Route::get('t_categorias', function() {
     // If the Content-Type and Accept headers are set to 'application/json',
     // this will return a JSON structure. This will be cleaned up later.
     return TCategoria::all();
 });
 
-Route::get('categorias/{nIdCategoria}', function($id) {
+Route::get('t_categorias/{nIdCategoria}', function($id) {
     return TCategoria::find($id);
 });
 
-Route::post('categorias', function(Request $request) {
+Route::post('t_categorias', function(Request $request) {
     return TCategoria::create($request->all);
 });
 
-Route::put('categorias/{nIdCategoria}', function(Request $request, $id) {
+Route::put('t_categorias/{nIdCategoria}', function(Request $request, $id) {
     $categoria = TCategoria::findOrFail($id);
     $categoria->update($request->all());
 
     return $categoria;
 });
 
-Route::delete('categorias/{nIdCategoria}', function($id) {
+Route::delete('t_categorias/{nIdCategoria}', function($id) {
     TCategoria::find($id)->delete();
 
     return 204;
@@ -76,7 +76,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get('categorias', 'CategoriaController@index');
-Route::get('categorias/{nIdCategoria}', 'CategoriaController@show');
+Route::get('categorias/{categoria}', 'CategoriaController@show');
 Route::post('categorias', 'CategoriaController@store');
-Route::put('categorias/{nIdCategoria}', 'CategoriaController@update');
-Route::delete('categorias/{nIdCategoria}', 'CategoriaController@delete');
+Route::put('categorias/{categoria}', 'CategoriaController@update');
+Route::delete('categorias/{categoria}', 'CategoriaController@delete');
