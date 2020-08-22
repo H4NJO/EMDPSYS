@@ -14,8 +14,9 @@ class CreateTEntSalsTable extends Migration
     public function up()
     {
         Schema::create('t_ent_sals', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table-> increments('nIdEntSal');
+            $table-> string('cNombre');
+            $table-> timestamps();
         });
     }
 

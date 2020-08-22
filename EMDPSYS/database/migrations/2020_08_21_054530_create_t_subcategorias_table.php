@@ -14,7 +14,10 @@ class CreateTSubcategoriasTable extends Migration
     public function up()
     {
         Schema::create('t_subcategorias', function (Blueprint $table) {
-            $table->id();
+            $table-> increments('nIdSubcategoria');
+            $table-> string('cNombreSubcategoria');
+            $table-> bool('bEstado');
+            $table-> foreign('nIdCategoria')->references('nIdCategoria')->on('TCategoria');
             $table->timestamps();
         });
     }

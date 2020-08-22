@@ -14,7 +14,10 @@ class CreateTComprobanteVentasTable extends Migration
     public function up()
     {
         Schema::create('t_comprobante_ventas', function (Blueprint $table) {
-            $table->id();
+            $table-> increments('nIdCompVenta');
+            $table-> string('cNombreCompVenta');
+            $table-> string('cCodigoSunat');
+            $table-> bool('bEstado');
             $table->timestamps();
         });
     }

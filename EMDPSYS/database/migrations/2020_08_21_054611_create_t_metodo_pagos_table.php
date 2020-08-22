@@ -14,7 +14,10 @@ class CreateTMetodoPagosTable extends Migration
     public function up()
     {
         Schema::create('t_metodo_pagos', function (Blueprint $table) {
-            $table->id();
+            $table-> increments('nIdMetPago');
+            $table-> string('cNombre');
+            $table-> decimal('nComision');
+            $table-> bool('bEstado');
             $table->timestamps();
         });
     }

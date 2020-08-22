@@ -14,7 +14,8 @@ class CreateTAusenciasTable extends Migration
     public function up()
     {
         Schema::create('t_ausencias', function (Blueprint $table) {
-            $table->id();
+            $table-> increments('nIdTAusencia');
+            $table-> string('cTipoAusencia');
             $table->timestamps();
         });
     }

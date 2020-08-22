@@ -14,7 +14,10 @@ class CreateTMonedasTable extends Migration
     public function up()
     {
         Schema::create('t_monedas', function (Blueprint $table) {
-            $table->id();
+            $table-> increments('nIdMoneda');
+            $table-> string('cNombre');
+            $table-> string('cSimbolo');
+            $table-> bool('bEstado');
             $table->timestamps();
         });
     }

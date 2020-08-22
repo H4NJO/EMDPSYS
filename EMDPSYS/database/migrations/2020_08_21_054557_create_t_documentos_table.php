@@ -14,7 +14,9 @@ class CreateTDocumentosTable extends Migration
     public function up()
     {
         Schema::create('t_documentos', function (Blueprint $table) {
-            $table->id();
+            $table-> increments('nIdDocumento');
+            $table-> string('cCantidadCaracteres');
+            $table-> bool('bEstado');
             $table->timestamps();
         });
     }
