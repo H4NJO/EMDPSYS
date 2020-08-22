@@ -14,8 +14,14 @@ class CreateHCuadreCajaTMetodoPagosTable extends Migration
     public function up()
     {
         Schema::create('h_cuadre_caja__t_metodo_pagos', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table -> foreign('nIdMetPago')->references('nIdMetPago')
+            ->on('TMetodoPago');
+            $table -> foreign('nIdCuadre')->references('nIdCuadre')
+            ->on('HCuadreCaja');
+            $table -> decimal('nSubTotal',2,8);
+            $table -> decimal('nComision',2,8);
+            $table -> decimal('nTotal',2,8);
+            $table -> timestamps();
         });
     }
 

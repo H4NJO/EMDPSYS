@@ -14,8 +14,13 @@ class CreateTCompVentaMVentasTable extends Migration
     public function up()
     {
         Schema::create('t_comp_venta__m_ventas', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table -> foreign('nIdCompVenta')->references('nIdCompVenta')
+            ->on('TComprobanteVenta');
+            $table -> foreign('nIdVenta')->references('nIdVenta')
+            ->on('MVenta');
+            $table -> string('cSerie', 20);
+            $table -> string('cCorrelativo',20);
+            $table -> timestamps();
         });
     }
 

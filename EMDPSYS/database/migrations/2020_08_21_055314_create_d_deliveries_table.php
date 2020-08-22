@@ -14,8 +14,12 @@ class CreateDDeliveriesTable extends Migration
     public function up()
     {
         Schema::create('d_deliveries', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table -> foreign('nIdDelivery')->references('nIdDelivery')
+            ->on('MDelivery');
+            $table -> foreign('nIdProducto')->references('nIdProducto')
+            ->on('MProducto');
+            $table -> int('nCantidad');
+            $table -> timestamps(); 
         });
     }
 

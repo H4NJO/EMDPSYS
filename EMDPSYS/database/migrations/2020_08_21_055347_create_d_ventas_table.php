@@ -14,8 +14,15 @@ class CreateDVentasTable extends Migration
     public function up()
     {
         Schema::create('d_ventas', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table -> increments('nIdDVenta');
+            $table -> int('nCantidad');
+            $table -> decimal('nPrecioUnitario',8,2);
+            $table -> decimal('nTotal',8,2);
+            $table -> foreign('nIdVenta')->references('nIdVenta')
+            ->on('MVenta');
+            $table -> foreign('nIdProducto')->references('nIdProducto')
+            ->on('MProducto');
+            $table -> timestamps();
         });
     }
 

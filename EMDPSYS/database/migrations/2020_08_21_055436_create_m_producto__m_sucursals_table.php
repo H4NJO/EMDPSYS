@@ -14,8 +14,12 @@ class CreateMProductoMSucursalsTable extends Migration
     public function up()
     {
         Schema::create('m_producto__m_sucursals', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table -> foreign('nIdProducto')->references('nIdProducto')
+            ->on('MProducto');
+            $table -> foreign('nIdSucursal')->references('nIdSucursal')
+            ->on('MSucursal');
+            $table -> int('nStock');
+            $table -> timestamps();
         });
     }
 

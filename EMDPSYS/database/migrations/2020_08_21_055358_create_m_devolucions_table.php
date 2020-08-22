@@ -14,8 +14,14 @@ class CreateMDevolucionsTable extends Migration
     public function up()
     {
         Schema::create('m_devolucions', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table -> increments('nIdDevolucion');
+            $table -> datetime('dFechaDevolucion');
+            $table -> decimal('nTotal',8,2);
+            $table -> foreign('nIdIngreso')->references('nIdIngreso')
+            ->on('MIngreso');
+            $table -> foreign('nIdEmpleado')->references('nIdEmpleado')
+            ->on('MEmpleado');
+            $table -> timestamps();
         });
     }
 

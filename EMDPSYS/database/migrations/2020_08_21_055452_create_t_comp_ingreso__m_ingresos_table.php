@@ -14,8 +14,12 @@ class CreateTCompIngresoMIngresosTable extends Migration
     public function up()
     {
         Schema::create('t_comp_ingreso__m_ingresos', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table -> foreign('nIdComIngreso')->references('nIdComIngreso')
+            ->on('TComprobanteIngreso');
+            $table -> foreign('nIdIngreso')->references('nIdIngreso')
+            ->on('MIngreso');
+            $table -> string('cNumeroDocumento', 15);
+            $table -> timestamps();
         });
     }
 
