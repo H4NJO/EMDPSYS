@@ -3,6 +3,35 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+Use App\Categoria;
+
+Route::get('categorias', function() {
+    // If the Content-Type and Accept headers are set to 'application/json',
+    // this will return a JSON structure. This will be cleaned up later.
+    return Categoria::all();
+});
+
+Route::get('categorias/{id}', function($id) {
+    return Categoria::find($id);
+});
+
+Route::post('categorias', function(Request $request) {
+    return Categoria::create($request->all);
+});
+
+Route::put('categorias/{id}', function(Request $request, $id) {
+    $categoria = Categoria::findOrFail($id);
+    $categoria->update($request->all());
+
+    return $categoria;
+});
+
+Route::delete('categorias/{id}', function($id) {
+    Categoria::find($id)->delete();
+
+    return 204;
+});
+
 Use App\Producto;
 
 Route::get('productos', function() {
@@ -46,3 +75,8 @@ Route::delete('productos/{id}', function($id) {
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('categorias', 'CategoriaController@index');
+Route::get('categorias/{categoria}', 'CategoriaController@show');
+Route::post('categorias', 'CategoriaController@store');
+Route::put('categorias/{categoria}', 'CategoriaController@update');
+Route::delete('categorias/{categoria}', 'CategoriaController@delete');
