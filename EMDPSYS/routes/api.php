@@ -11,7 +11,7 @@ Route::get('categorias', function() {
     return TCategoria::all();
 });
 
-Route::get('categorias/{id}', function($id) {
+Route::get('categorias/{nIdCategoria}', function($id) {
     return TCategoria::find($id);
 });
 
@@ -19,14 +19,14 @@ Route::post('categorias', function(Request $request) {
     return TCategoria::create($request->all);
 });
 
-Route::put('categorias/{id}', function(Request $request, $id) {
+Route::put('categorias/{nIdCategoria}', function(Request $request, $id) {
     $categoria = TCategoria::findOrFail($id);
     $categoria->update($request->all());
 
     return $categoria;
 });
 
-Route::delete('categorias/{id}', function($id) {
+Route::delete('categorias/{nIdCategoria}', function($id) {
     TCategoria::find($id)->delete();
 
     return 204;
