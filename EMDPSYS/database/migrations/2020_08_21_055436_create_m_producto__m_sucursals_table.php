@@ -14,10 +14,12 @@ class CreateMProductoMSucursalsTable extends Migration
     public function up()
     {
         Schema::create('m_producto__m_sucursals', function (Blueprint $table) {
+            $table -> integer('nIdProducto')->unsigned();
             $table -> foreign('nIdProducto')->references('nIdProducto')
-            ->on('MProducto');
+            ->on('m_productos');
+            $table -> integer('nIdSucursal')->unsigned();
             $table -> foreign('nIdSucursal')->references('nIdSucursal')
-            ->on('MSucursal');
+            ->on('m_sucursals');
             $table -> int('nStock');
             $table -> timestamps();
         });

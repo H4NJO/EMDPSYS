@@ -19,14 +19,18 @@ class CreateMProformasTable extends Migration
             $table -> string('cCorrelativo', 20);
             $table -> decimal('nTotal',8,2);
             $table -> decimal('nIGV',8,2);
+            $table -> integer('nIdModena')->unsigned();
             $table -> foreign('nIdModena')->references('nIdModena')
-            ->on('TMoneda');
+            ->on('t_monedas');
+            $table -> integer('nIdEmpleado')->unsigned();
             $table -> foreign('nIdEmpleado')->references('nIdEmpleado')
-            ->on('MEmpleado');
+            ->on('m_empleados');
+            $table -> integer('nIdCliente')->unsigned();
             $table -> foreign('nIdCliente')->references('nIdCliente')
-            ->on('MCliente');
+            ->on('m_clientes');
+            $table -> integer('nIdSucursal')->unsigned();
             $table -> foreign('nIdSucursal')->references('nIdSucursal')
-            ->on('MSucursal');
+            ->on('m_sucursals');
             $table -> timestamps(); 
         });
     }

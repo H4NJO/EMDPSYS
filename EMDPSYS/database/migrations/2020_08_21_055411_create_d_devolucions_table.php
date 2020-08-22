@@ -16,10 +16,12 @@ class CreateDDevolucionsTable extends Migration
         Schema::create('d_devolucions', function (Blueprint $table) {
             $table -> datetime('dFechaDevolucion');
             $table -> decimal('nTotal',2,8);
+            $table -> integer('nIdIngreso')->unsigned();
             $table -> foreign('nIdIngreso')->references('nIdIngreso')
-            ->on('MIngreso');
+            ->on('m_ingresos');
+            $table -> integer('nIdEmpleado')->unsigned();
             $table -> foreign('nIdEmpleado')->references('nIdEmpleado')
-            ->on('MEmpleado');
+            ->on('m_ventas');
             $table -> timestamps();
         });
     }

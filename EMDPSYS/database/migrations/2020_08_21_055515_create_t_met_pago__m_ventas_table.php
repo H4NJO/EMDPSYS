@@ -14,10 +14,12 @@ class CreateTMetPagoMVentasTable extends Migration
     public function up()
     {
         Schema::create('t_met_pago__m_ventas', function (Blueprint $table) {
+            $table -> integer('nIdMetPago')->unsigned();
             $table -> foreign('nIdMetPago')->references('nIdMetPago')
-            ->on('TMetodoPago');
+            ->on('t_metodo_pagos');
+            $table -> integer('nIdVenta')->unsigned();
             $table -> foreign('nIdVenta')->references('nIdVenta')
-            ->on('MVenta');
+            ->on('m_ventas');
             $table -> int('nCantidad');
             $table -> timestamps();
         });

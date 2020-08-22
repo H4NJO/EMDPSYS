@@ -14,10 +14,12 @@ class CreateTCompVentaMVentasTable extends Migration
     public function up()
     {
         Schema::create('t_comp_venta__m_ventas', function (Blueprint $table) {
+            $table -> integer('nIdCompVenta')->unsigned();
             $table -> foreign('nIdCompVenta')->references('nIdCompVenta')
-            ->on('TComprobanteVenta');
+            ->on('t_comprobante_ventas');
+            $table -> integer('nIdVenta')->unsigned();
             $table -> foreign('nIdVenta')->references('nIdVenta')
-            ->on('MVenta');
+            ->on('m_ventas');
             $table -> string('cSerie', 20);
             $table -> string('cCorrelativo',20);
             $table -> timestamps();

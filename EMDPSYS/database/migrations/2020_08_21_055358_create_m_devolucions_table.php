@@ -17,10 +17,12 @@ class CreateMDevolucionsTable extends Migration
             $table -> increments('nIdDevolucion');
             $table -> datetime('dFechaDevolucion');
             $table -> decimal('nTotal',8,2);
+            $table -> integer('nIdIngreso')->unsigned();
             $table -> foreign('nIdIngreso')->references('nIdIngreso')
-            ->on('MIngreso');
+            ->on('m_ingresos');
+            $table -> integer('nIdEmpleado')->unsigned();
             $table -> foreign('nIdEmpleado')->references('nIdEmpleado')
-            ->on('MEmpleado');
+            ->on('m_empleados');
             $table -> timestamps();
         });
     }

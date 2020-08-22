@@ -14,10 +14,12 @@ class CreateDDeliveriesTable extends Migration
     public function up()
     {
         Schema::create('d_deliveries', function (Blueprint $table) {
+            $table -> integer('nIdDelivery')->unsigned();
             $table -> foreign('nIdDelivery')->references('nIdDelivery')
-            ->on('MDelivery');
+            ->on('m_deliveries');
+            $table -> integer('nIdProducto')->unsigned();
             $table -> foreign('nIdProducto')->references('nIdProducto')
-            ->on('MProducto');
+            ->on('m_productos');
             $table -> int('nCantidad');
             $table -> timestamps(); 
         });

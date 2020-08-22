@@ -18,10 +18,12 @@ class CreateDProformasTable extends Migration
             $table -> int('nCantidad');
             $table -> decimal('nPrecioUnitario',8,2);
             $table -> decimal('nTotal',8,2);
+            $table -> integer('nIdProforma')->unsigned();
             $table -> foreign('nIdProforma')->references('nIdProforma')
-            ->on('MProforma');
+            ->on('m_proformas');
+            $table -> integer('nIdProducto')->unsigned();
             $table -> foreign('nIdProducto')->references('nIdProducto')
-            ->on('MProducto');
+            ->on('m_productos');
             $table -> timestamps();
         });
     }

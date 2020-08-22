@@ -18,8 +18,10 @@ class CreateDVentasTable extends Migration
             $table -> int('nCantidad');
             $table -> decimal('nPrecioUnitario',8,2);
             $table -> decimal('nTotal',8,2);
+            $table -> integer('nIdVenta')->unsigned();
             $table -> foreign('nIdVenta')->references('nIdVenta')
-            ->on('MVenta');
+            ->on('m_ventas');
+            $table -> integer('nIdProducto')->unsigned();
             $table -> foreign('nIdProducto')->references('nIdProducto')
             ->on('MProducto');
             $table -> timestamps();
