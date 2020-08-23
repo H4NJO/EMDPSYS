@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class HTrabExtra extends Model
+class Htrabextra extends Model
 {
     //
 }

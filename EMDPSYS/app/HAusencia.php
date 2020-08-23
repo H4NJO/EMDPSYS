@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class HAusencia extends Model
+class Hausencia extends Model
 {
     //
 }

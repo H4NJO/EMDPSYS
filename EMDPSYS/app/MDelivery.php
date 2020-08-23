@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MDelivery extends Model
+class Mdelivery extends Model
 {
     //
 }

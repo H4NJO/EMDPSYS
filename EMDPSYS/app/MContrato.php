@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MContrato extends Model
+class Mcontrato extends Model
 {
     //
 }

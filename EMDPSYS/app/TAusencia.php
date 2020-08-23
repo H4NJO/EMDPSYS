@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TAusencia extends Model
+class Tausencia extends Model
 {
     //
 }

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class DIngreso extends Model
+class Dingreso extends Model
 {
     //
 }

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class HPenalidad extends Model
+class Hpenalidad extends Model
 {
     //
 }

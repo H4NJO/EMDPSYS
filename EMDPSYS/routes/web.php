@@ -16,3 +16,27 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource("deliveries","DdeliveryController");
+Route::resource("devoluciones","DdevolucionController");
+//Route::resource("deliveries","DdeliveryController");
+//Route::resource("deliveries","DdeliveryController");
+//Route::resource("deliveries","DdeliveryController");
+//Route::resource("deliveries","DdeliveryController");
+//Route::resource("deliveries","DdeliveryController");
+//Route::resource("deliveries","DdeliveryController");
+//Route::resource("deliveries","DdeliveryController");
+//Route::resource("deliveries","DdeliveryController");
+//Route::resource("deliveries","DdeliveryController");
+//Route::resource("deliveries","DdeliveryController");
+//Route::resource("deliveries","DdeliveryController");
+//Route::resource("deliveries","DdeliveryController");
+//Route::resource("deliveries","DdeliveryController");
+//Route::resource("deliveries","DdeliveryController");
+//Route::resource("deliveries","DdeliveryController");
+//Route::resource("deliveries","DdeliveryController");
+//Route::resource("deliveries","DdeliveryController");
+//Route::resource("deliveries","DdeliveryController");
+//Route::resource("deliveries","DdeliveryController");
+Route::resource("categorias","TcategoriaController");
+

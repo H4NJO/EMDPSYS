@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class HBonificacion extends Model
+class Hbonificacion extends Model
 {
     //
 }

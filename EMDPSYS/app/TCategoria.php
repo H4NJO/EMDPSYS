@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TCategoria extends Model
+class Tcategoria extends Model
 {
     //
 }

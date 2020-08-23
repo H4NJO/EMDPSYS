@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MHorario extends Model
+class Mhorario extends Model
 {
     //
 }
