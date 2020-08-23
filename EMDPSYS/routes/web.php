@@ -19,9 +19,9 @@ Route::get('/', function () {
 
 Route::resource("deliveries","DdeliveryController");
 Route::resource("devoluciones","DdevolucionController");
-//Route::resource("deliveries","DdeliveryController");
-//Route::resource("deliveries","DdeliveryController");
-//Route::resource("deliveries","DdeliveryController");
+Route::resource("horarioasignados","DhorarioasignadoController");
+Route::resource("ingresos","DingresoController");
+Route::resource("proformas","DproformaController");
 //Route::resource("deliveries","DdeliveryController");
 //Route::resource("deliveries","DdeliveryController");
 //Route::resource("deliveries","DdeliveryController");
