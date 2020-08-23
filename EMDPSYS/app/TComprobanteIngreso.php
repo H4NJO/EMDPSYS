@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Tcomprobanteingreso extends Model
+class TComprobanteIngreso extends Model
 {
     //
 }

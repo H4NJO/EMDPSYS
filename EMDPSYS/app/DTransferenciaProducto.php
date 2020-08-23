@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Dtransferenciaproducto extends Model
+class DTransferenciaProducto extends Model
 {
     //
 }

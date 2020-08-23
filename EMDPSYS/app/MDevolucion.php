@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Mdevolucion extends Model
+class MDevolucion extends Model
 {
     //
 }

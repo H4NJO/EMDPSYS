@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Tcargo extends Model
+class TCargo extends Model
 {
     //
 }
